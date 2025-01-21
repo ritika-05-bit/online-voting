@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->
+    <style>
+        body {
+            padding-top: 56px; /* Adjust for navbar height */
+            background: url('https://www.surveylegend.com/wordpress/wp-content/uploads/2020/04/online-voting.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        .navbar {
+            background-color: #007bff; /* Blue color */
+        }
+
+        .navbar-brand {
+            color: #ffffff !important; /* White color for the brand */
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff !important; /* White color for the links */
+        }
+
+        .navbar-nav .nav-link.active {
+            text-decoration: underline;
+            color: #ffdd57 !important; /* Highlight color */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #d1d1d1 !important; /* Light grey color on hover */
+        }
+
+        .home-content {
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-between; /* Align content */
+        }
+
+        .home-content .content-left {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            width: 40%;
+        }
+
+        .home-content h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .home-content p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .home-content i {
+            color: #ffdd57;
+            margin-right: 10px;
+        }
+
+        /* Circular section styles */
+        .circular-section {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            flex-direction: column;
+        }
+
+        .circular-section h2 {
+            margin-bottom: 10px;
+        }
+
+        .circular-section p {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .logo .flag {
+            width: 50px;
+            height: 30px;
+            border-radius: 5px;
+            position: relative;
+            margin-right: 10px;
+        }
+
+        .logo .flag .stripe {
+            height: 10px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+        }
+
+        .logo .flag .stripe:nth-child(1) {
+            background-color: #ff9933; /* Orange */
+            top: 0;
+        }
+
+        .logo .flag .stripe:nth-child(2) {
+            background-color: #ffffff; /* White */
+            top: 10px;
+        }
+
+        .logo .flag .stripe:nth-child(3) {
+            background-color: #138808; /* Green */
+            top: 20px;
+        }
+
+        .logo .flag .ashoka-chakra {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo .flag .ashoka-chakra:before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #000;
+        }
+        .team-signature {
+            margin-top: 10px;
+           
+            color: #ffdd57; /* Color for signature */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">
+            <div class="logo">
+                <div class="flag">
+                    <div class="stripe"></div>
+                    <div class="stripe"></div>
+                    <div class="stripe"></div>
+                    <div class="ashoka-chakra"></div>
+                </div>
+                <div class="text">eMatdaan</div>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="service.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">My Profile</a>
+                </li>
+                <li class="nav-item" id="loginNavItem">
+                    <a class="nav-link" href="login.html">Login</a> <!-- Link to login.html -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page Content -->
+    <div class="container home-content">
+        <div class="content-left">
+            <h1><i class="fas fa-vote-yea"></i>Welcome to the eVoting System</h1>
+            <p><i class="fas fa-check-circle"></i>Empowering citizens to vote securely and efficiently from anywhere.</p>
+            <p><i class="fas fa-users"></i>Your vote is your voice. Make it count with ease and confidence.</p>
+            <p><i class="fas fa-shield-alt"></i>Participate in free and fair elections through our secure online voting platform.</p>
+            <p><i class="fas fa-lock"></i>Safe, reliable, and transparent voting process, ensuring your privacy at every step.</p>
+            <p><i class="fas fa-thumbs-up"></i>Designed to provide convenience while maintaining the integrity of the election.</p>
+        </div>
+
+        <!-- Circular Section on the Right -->
+        <div class="circular-section">
+           <h2  class="team-signature" > Voting Matters!</h2> 
+            <p><strong>Empower yourself</strong></p>
+            <p>Make informed decisions.</p>
+            <p>Your voice matters.</p>
+            <p>Participate actively.</p>
+            <p>Vote for a better future.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
